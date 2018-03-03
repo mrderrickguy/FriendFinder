@@ -1,36 +1,168 @@
 
-var express = require("express");
-var bodyParser = require("body-parser");
+//array that holds all the 'friends' that have taken the survey
+//initialize starting with 'dummy' data
+var friends = [
+  {
+      "name":"Chris",
+      "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+      "scores":[
+         5,
+         1,
+         4,
+         4,
+         5,
+         1,
+         2,
+         5,
+         4,
+         1
+          ]
+      },
+  {
+  "name":"Derrick",
+  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  "scores":[
+     5,
+     1,
+     4,
+     4,
+     5,
+     1,
+     2,
+     5,
+     4,
+     1
+      ]
+},
+{
+  "name":"Theresa",
+  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  "scores":[
+     5,
+     1,
+     4,
+     4,
+     5,
+     1,
+     2,
+     5,
+     4,
+     1
+      ]
+},
+{
+  "name":"Rose",
+  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  "scores":[
+     5,
+     1,
+     4,
+     3,
+     2,
+     7,
+     7,
+     8,
+     9,
+     9
+      ]
+},
+{
+  "name":"Mary",
+  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  "scores":[
+     5,
+     1,
+     4,
+     3,
+     2,
+     7,
+     7,
+     8,
+     9,
+     9
+      ]
+},
+{
+  "name":"Lisa",
+  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  "scores":[
+     5,
+     1,
+     4,
+     3,
+     1,
+     6,
+     9,
+     8,
+     9,
+     9
+      ]
+},
+{
+  "name":"Nick",
+  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  "scores":[
+     5,
+     1,
+     4,
+     3,
+     1,
+     6,
+     9,
+     8,
+     9,
+     9
+      ]
+},
+{
+  "name":"Jason",
+  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  "scores":[
+     5,
+     1,
+     4,
+     3,
+     2,
+     6,
+    10,
+     8,
+     8,
+     9
+      ]
+},
+{
+  "name":"Nate",
+  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  "scores":[
+     5,
+     2,
+     4,
+     3,
+     1,
+     6,
+     9,
+     8,
+     9,
+    10
+      ]
+},
+{
+  "name":"Kris",
+  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  "scores":[
+     5,
+     1,
+     4,
+     3,
+     2,
+     6,
+     9,
+     8,
+     9,
+    10
+      ]
+}
+]
 
-// ==============================================================================
-// EXPRESS CONFIGURATION
-// This sets up the basic properties for our express server
-// ==============================================================================
-
-// Tells node that we are creating an "express" server
-var app = express();
-
-// Sets an initial port. We"ll use this later in our listener
-var PORT = process.env.PORT || 8080;
-
-// Sets up the Express app to handle data parsing
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-// ================================================================================
-// ROUTER
-// The below points our server to a series of "route" files.
-// These routes give our server a "map" of how to respond when users visit or request data from various URLs.
-// ================================================================================
-
-require("./app/data/apiRoutes")(app);
-require("./app/data/htmlRoutes")(app);
-
-// =============================================================================
-// LISTENER
-// The below code effectively "starts" our server
-// =============================================================================
-
-app.listen(PORT, function() {
-  console.log("App listening on PORT: " + PORT);
-});
+// Note how we export the array. This makes it accessible to other files using require.
+module.exports = friends;

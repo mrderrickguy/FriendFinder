@@ -1,0 +1,19 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrderrickguy/FriendFinder.git"
+  },
+  "author": "Derrick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrderrickguy/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/mrderrickguy/FriendFinder#readme"
+}
